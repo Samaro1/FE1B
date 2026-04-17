@@ -102,9 +102,9 @@
 <script>
   const timeEl = document.getElementById('epoch-time');
 
-  function updateTime() {
-    timeEl.textContent = Date.now();
-  }
+    function updateTime() {
+    timeEl.textContent = Date.now().toString();
+    }
 
   updateTime();
   setInterval(updateTime, 1000);
