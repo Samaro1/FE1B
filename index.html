@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Card — Maro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<article data-testid="test-profile-card">
+  <h1 class="sr-only">Profile Card</h1>
+
+  <div class="profile-layout">
+
+    <!-- Avatar -->
+    <div class="avatar-col">
+      <figure>
+        <img
+          data-testid="test-user-avatar"
+          src="."
+          alt="Profile avatar for Maro, a backend developer"
+          width="120"
+          height="120"
+        />
+        <figcaption>@devmaro</figcaption>
+      </figure>
+    </div>
+
+    <!-- Info -->
+    <div class="info-col">
+      <header>
+        <h2 data-testid="test-user-name" aria-label="User name: Maro">Maro</h2>
+      </header>
+
+      <p data-testid="test-user-bio">
+        Backend developer building toward a full-stack career. Passionate about Logic, clean APIs, and solving real-world problems through code. Currently exploring React and Web3.
+      </p>
+
+      <div class="time-row">
+        <span>Current epoch time (ms): </span>
+        <span
+          data-testid="test-user-time"
+          id="epoch-time"
+          aria-live="polite"
+          aria-label="Current time in milliseconds"
+        ></span>
+      </div>
+
+      <nav aria-label="Social media links" data-testid="test-user-social-links">
+        <ul>
+          <li>
+            <a
+              data-testid="test-user-social-github"
+              href="https://github.com/samaro1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Maro's GitHub profile"
+            >GitHub</a>
+          </li>
+          <li>
+            <a
+              data-testid="test-user-social-twitter"
+              href="https://twitter.com/devmaro005"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Maro's Twitter profile"
+            >Twitter</a>
+          </li>
+          <li>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Hobbies & Dislikes -->
+  <div class="lists-row">
+    <section class="list-section" aria-labelledby="hobbies-heading">
+      <h3 id="hobbies-heading">Hobbies</h3>
+      <ul data-testid="test-user-hobbies">
+        <li>Chess</li>
+        <li>Open-source contributing</li>
+        <li>Reading tech books</li>
+        <li>Watching anime</li>
+        <li>Building side projects</li>
+      </ul>
+    </section>
+
+    <section class="list-section" aria-labelledby="dislikes-heading">
+      <h3 id="dislikes-heading">Dislikes</h3>
+      <ul data-testid="test-user-dislikes">
+        <li>Spaghetti code</li>
+        <li>Inconsistent APIs</li>
+        <li>Poor documentation</li>
+        <li>Unreliable power supply</li>
+        <li>Bad network</li>
+      </ul>
+    </section>
+  </div>
+
+</article>
+
+<script>
+  const timeEl = document.getElementById('epoch-time');
+
+  function updateTime() {
+    timeEl.textContent = Date.now();
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
